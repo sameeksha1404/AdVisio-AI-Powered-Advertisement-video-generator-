@@ -1,0 +1,14 @@
+gradio
+ultralytics
+diffusers
+transformers
+accelerate
+moviepy
+rembg
+onnxruntime
+opencv-python
+numpy
+Pillow
+requests
+torch
+python-dotenv
