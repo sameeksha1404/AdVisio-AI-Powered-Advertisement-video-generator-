@@ -59,21 +59,6 @@ Designed for small businesses, creators, students, and digital marketers.
 
 ---
 
-## 📁 Project Structure
-
-AdVisio/
-│
-├── app.py
-├── requirements.txt
-├── README.md
-├── LICENSE
-├── .gitignore
-│
-├── assets/
-│   └── architecture.png 
-
----
-
 ## 🚀 Installation
 
 ### Clone Repository
