@@ -1,8 +1,3 @@
-"""
-AdVisio – AI Powered Automated Advertisement Generator
-Author: Ishya Reddy
-License: MIT
-"""
 
 import os
 import torch
@@ -18,16 +13,8 @@ from rembg import remove
 from io import BytesIO
 import gradio as gr
 from dotenv import load_dotenv
-
-# ===============================
-# ENVIRONMENT VARIABLES
-# ===============================
 load_dotenv()
 ELEVENLABS_API_KEY = os.getenv("ELEVENLABS_API_KEY")
-
-# ===============================
-# PATH SETUP
-# ===============================
 OUTPUT_FOLDER = "output_ad"
 IMAGE_FOLDER = os.path.join(OUTPUT_FOLDER, "images")
 AUDIO_FILE = os.path.join(OUTPUT_FOLDER, "voiceover.mp3")
@@ -36,10 +23,6 @@ FINAL_VIDEO = os.path.join(OUTPUT_FOLDER, "final_ad.mp4")
 os.makedirs(IMAGE_FOLDER, exist_ok=True)
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
-
-# ===============================
-# LOAD MODELS
-# ===============================
 model = YOLO("yolov8n.pt")
 
 # Load Stable Diffusion once
@@ -49,11 +32,6 @@ pipe = StableDiffusionPipeline.from_pretrained(
     torch_dtype=torch.float16 if DEVICE == "cuda" else torch.float32
 )
 pipe.to(DEVICE)
-
-# ===============================
-# FUNCTIONS
-# ===============================
-
 def extract_object(image_path):
     with open(image_path, "rb") as f:
         output_bytes = remove(f.read())
@@ -116,11 +94,6 @@ def generate_voiceover(script_text):
     else:
         raise RuntimeError(f"Voiceover failed: {response.text}")
 
-
-# ===============================
-# MAIN GRADIO FUNCTION
-# ===============================
-
 def generate_ad(image):
     temp_path = os.path.join(IMAGE_FOLDER, "input.png")
     image.save(temp_path)
@@ -145,16 +118,11 @@ def generate_ad(image):
 
     return FINAL_VIDEO
 
-
-# ===============================
-# GRADIO UI
-# ===============================
-
 interface = gr.Interface(
     fn=generate_ad,
     inputs=gr.Image(type="pil"),
     outputs=gr.Video(),
-    title="🎬 AdVisio - AI Advertisement Generator",
+    title=" AdVisio - AI Advertisement Generator",
     description="Upload a product image to generate an AI-powered advertisement."
 )
 
