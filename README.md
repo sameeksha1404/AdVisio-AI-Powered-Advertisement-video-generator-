@@ -9,58 +9,76 @@
 
 ---
 
-##  Overview
+## 📖 Overview
 
 AdVisio is an AI-powered automated advertisement video generation system that transforms static product images into professional marketing videos using:
 
--  YOLOv8 for Object Detection
--  Stable Diffusion for Background Generation
--  ElevenLabs for Voice Synthesis
--  MoviePy for Video Assembly
--  Gradio Web Interface
+- YOLOv8 for Object Detection  
+- Stable Diffusion for Background Generation  
+- ElevenLabs for Voice Synthesis  
+- MoviePy for Video Assembly  
+- Gradio Web Interface  
 
-Designed for small businesses, creators, and digital marketers.
+Designed for small businesses, creators, students, and digital marketers.
 
 ---
 
 ## 🏗 System Architecture
 
-1. Product Image Upload
-2. Background Removal
-3. Object Detection (YOLOv8)
-4. AI Scene Generation (Stable Diffusion)
-5. Script Generation
-6. Voice Synthesis
-7. Video Rendering
+1. Product Image Upload  
+2. Background Removal  
+3. Object Detection (YOLOv8)  
+4. AI Scene Generation (Stable Diffusion)  
+5. Script Generation  
+6. Voice Synthesis  
+7. Video Rendering  
 
 ---
 
-##  Key Features
+## ⭐ Key Features
 
 ✔ Fully Automated Pipeline  
 ✔ AI-Generated Background Scenes  
 ✔ Realistic Voiceovers  
 ✔ Real-Time Gradio Interface  
+✔ End-to-End Video Generation  
 ✔ Scalable SaaS Potential  
 
 ---
 
 ## 🛠 Tech Stack
 
-- Python
-- PyTorch
-- Ultralytics YOLOv8
-- HuggingFace Diffusers
-- ElevenLabs API
-- MoviePy
-- OpenCV
+- Python  
+- PyTorch  
+- Ultralytics YOLOv8  
+- Diffusers  
+- ElevenLabs API  
+- MoviePy  
+- OpenCV  
+- rembg  
 
 ---
 
-##  Installation
+## 📁 Project Structure
+
+AdVisio/
+│
+├── app.py
+├── requirements.txt
+├── README.md
+├── LICENSE
+├── .gitignore
+│
+├── assets/
+│   └── architecture.png 
+
+---
+
+## 🚀 Installation
+
+### Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/AdVisio.git
+git clone https://github.com/sameeksha1404/AdVisio.git
 cd AdVisio
-pip install -r requirements.txt
-python app.py
+
